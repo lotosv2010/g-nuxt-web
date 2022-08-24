@@ -31,7 +31,8 @@
 
 <script>
 export default {
-  name: 'EditorIndex'
+  name: 'EditorIndex',
+  middleware: ['authenticated'] // 在路由匹配组件渲染之前会执行中间件
 }
 </script>
 

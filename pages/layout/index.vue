@@ -8,32 +8,37 @@
             <!-- Add "active" class when you're on that page" -->
             <nuxt-link class="nav-link" to="/" exact>Home</nuxt-link>
           </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/editor">
-              <i class="ion-compose"></i>&nbsp;New Post
-            </nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/settings">
-              <i class="ion-gear-a"></i>&nbsp;Settings
-            </nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/profile/lpz">
-              <Logo class="user-pic" />
-              LPZ
-            </nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/login">
-              Sign in
-            </nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/register">
-              Sign up
-            </nuxt-link>
-          </li>
+          <template v-if="user">
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/editor">
+                <i class="ion-compose"></i>&nbsp;New Post
+              </nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/settings">
+                <i class="ion-gear-a"></i>&nbsp;Settings
+              </nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/profile/lpz">
+                <img class="user-pic" :src="user.image" v-if="user.image" />
+                <Logo class="user-pic" v-else />
+                {{ user.username }}
+              </nuxt-link>
+            </li>
+          </template>
+          <template v-else>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/login">
+                Sign in
+              </nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/register">
+                Sign up
+              </nuxt-link>
+            </li>
+          </template>
         </ul>
       </div>
     </nav>
@@ -50,8 +55,12 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex';
 export default {
-  name: 'LayoutIndex'
+  name: 'LayoutIndex',
+  computed: {
+    ...mapState('user', ['user'])
+  }
 }
 </script>
 <style scoped lang="scss">

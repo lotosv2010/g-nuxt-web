@@ -80,7 +80,8 @@
 
 <script>
 export default {
-  name: 'ProfileIndex'
+  name: 'ProfileIndex',
+  middleware: 'authenticated'
 }
 </script>
 
