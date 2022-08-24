@@ -45,5 +45,25 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  // 自定义路由规则
+  router: {
+    extendRoutes(routes, resolve) {
+      // 清除默认路由规则
+      routes.splice(0);
+      routes.push(...[
+        {
+          path: '/',
+          component: resolve(__dirname, 'pages/layout/'),
+          children: [
+            {
+              path: '', // 默认子路由
+              component: resolve(__dirname, 'pages/home/'),
+            }
+          ]
+        }
+      ]);
+    }
   }
 }
