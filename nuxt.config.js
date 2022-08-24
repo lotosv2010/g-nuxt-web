@@ -57,20 +57,59 @@ export default {
           path: '/',
           component: resolve(__dirname, 'pages/layout/'),
           children: [
+            // 首页
             {
               path: '', // 默认子路由
               name: 'Home',
               component: resolve(__dirname, 'pages/home/'),
             },
+            // 登录
             {
               path: 'login', 
               name: 'Login',
               component: resolve(__dirname, 'pages/login/'),
             },
+            // 注册
             {
               path: 'register', 
               name: 'Register',
               component: resolve(__dirname, 'pages/login/'),
+            },
+            // 用户设置
+            {
+              path: 'settings', 
+              name: 'Settings',
+              component: resolve(__dirname, 'pages/settings/'),
+            },
+            // 发布文章
+            {
+              path: 'editor', 
+              name: 'Add',
+              component: resolve(__dirname, 'pages/editor/'),
+            },
+            // 编辑文章
+            {
+              path: 'editor/:slug', 
+              name: 'Editor',
+              component: resolve(__dirname, 'pages/editor/'),
+            },
+            // 文章详情
+            {
+              path: 'article/:slug', 
+              name: 'Article',
+              component: resolve(__dirname, 'pages/article/'),
+            },
+            // 用户页面
+            {
+              path: 'profile/:username', 
+              name: 'Profile',
+              component: resolve(__dirname, 'pages/profile/'),
+            },
+            // 用户页面/喜欢的文章
+            {
+              path: 'profile/:username/favorites ', 
+              name: 'Favorites',
+              component: resolve(__dirname, 'pages/profile/'),
             }
           ]
         }
