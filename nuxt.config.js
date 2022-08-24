@@ -59,7 +59,18 @@ export default {
           children: [
             {
               path: '', // 默认子路由
+              name: 'Home',
               component: resolve(__dirname, 'pages/home/'),
+            },
+            {
+              path: 'login', 
+              name: 'Login',
+              component: resolve(__dirname, 'pages/login/'),
+            },
+            {
+              path: 'register', 
+              name: 'Register',
+              component: resolve(__dirname, 'pages/login/'),
             }
           ]
         }
