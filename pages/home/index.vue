@@ -76,7 +76,11 @@
 
 <script>
 export default {
-  name: 'HomePage'
+  name: 'HomePage',
+  async asyncData({ $axios }) {
+    const articles = await $axios.$get('/api/articles');
+    return { articles }
+  }
 }
 </script>
 
