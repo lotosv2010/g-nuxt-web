@@ -6,7 +6,7 @@
         <ul class="nav navbar-nav pull-xs-right">
           <li class="nav-item">
             <!-- Add "active" class when you're on that page" -->
-            <nuxt-link class="nav-link active" to="/">Home</nuxt-link>
+            <nuxt-link class="nav-link" to="/" exact>Home</nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link class="nav-link" to="/editor">
@@ -21,7 +21,6 @@
           <li class="nav-item">
             <nuxt-link class="nav-link" to="/profile/lpz">
               <Logo class="user-pic" />
-              <!-- <img class="user-pic" src="http://toutiao.meiduo.site/FtNcS8sKFSYQbtBbd40eFTL6lAs_" ng-src="http://toutiao.meiduo.site/FtNcS8sKFSYQbtBbd40eFTL6lAs_"> -->
               LPZ
             </nuxt-link>
           </li>

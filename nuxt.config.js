@@ -49,6 +49,7 @@ export default {
 
   // 自定义路由规则
   router: {
+    linkActiveClass: 'active',
     extendRoutes(routes, resolve) {
       // 清除默认路由规则
       routes.splice(0);
