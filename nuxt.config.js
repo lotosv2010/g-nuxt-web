@@ -49,6 +49,12 @@ export default {
   build: {
   },
 
+  // https://nuxtjs.org/docs/configuration-glossary/configuration-ssr
+  ssr: true, // false
+
+  // https://nuxtjs.org/docs/configuration-glossary/configuration-target
+  target: 'server', // static
+
   // 自定义路由规则
   router: {
     linkActiveClass: 'active',

@@ -22,6 +22,7 @@
     "webpack": "^4.46.0"
   },
   "devDependencies": {
+    "@nuxtjs/vercel-builder": "^0.22.1",
     "node-sass": "^7.0.1",
     "sass-loader": "10"
   }
